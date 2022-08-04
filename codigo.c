@@ -18,10 +18,14 @@ int main(){
     FILE * arquivo2;
     FILE * arquivo3;
     int dia, mes, ano, rating;
+    int *vetor1, *vetor2;
+    int i = 0;
     while (1)
     {
         if(fscanf(arquivo1, "%d-%d-%d-%d", &ano, &mes, &dia, &rating) == EOF){break;}
+        *(vetor1 + i) = ano + mes;
+        *(vetor2 + i) = rating;
     }
-    
+    fclose(arquivo1);
     return 0;
 }
