@@ -1,2 +1,2 @@
-# EDA-Spotify
-Repositório para trabalho de EDA da UNB.
+# EDA-Spotify | Insert Sort
+Repositório para trabalho de EDA da UNB. 
