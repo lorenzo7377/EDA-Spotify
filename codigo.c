@@ -38,15 +38,18 @@ int main(){
         if(fscanf(arquivo1, "%d-%d-%d-%d", &ano, VetorMes+i, &d, VetorNotas+i) == EOF){break;}
         i++;
     }
+    clock_t inicio2, fim2;
+    inicio2 = clock();
     insercao(i+1,VetorMes,VetorNotas);
-    // for (int j = 0; j < i; j++)
-    // {
-    //     printf("%d - %d\n", *(VetorMes+j), *(VetorNotas+j));
-    // }
-    
+    fim2 = clock();
+
+    double tempo2 = (double)(fim2 - inicio2) / CLOCKS_PER_SEC;
+    clock_t inicio, fim;
+    double tempo;
     double soma;
     int posicao = 1;
     double contador;
+    inicio = clock();
     for (int j = 1; j <= 7; j++)
     {
         soma = 0;
@@ -66,8 +69,10 @@ int main(){
         printf("Média do mês %d: %.2lf\n", j, soma / contador);
 
     }
-    
-    
+    fim = clock();
+    tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
+    printf("média - %lf segundos\n", tempo);
+    printf("ordenação - %lf segundos\n", tempo2);
     free(VetorNotas);
     free(VetorMes);
     fclose(arquivo1);
