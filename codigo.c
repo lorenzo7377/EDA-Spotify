@@ -50,6 +50,8 @@ int main(){
     int posicao = 1;
     double contador;
     inicio = clock();
+    FILE *ponteiro = fopen("medias.csv","w+");
+    fprintf(ponteiro,"Mes,Avaliação_Média\n");
     for (int j = 1; j <= 7; j++)
     {
         soma = 0;
@@ -66,7 +68,7 @@ int main(){
                 break;
             }
         }
-        printf("Média do mês %d: %.2lf\n", j, soma / contador);
+        fprintf(ponteiro,"2022_0%d,%.2lf\n", j, soma / contador);
 
     }
     fim = clock();
@@ -76,6 +78,6 @@ int main(){
     free(VetorNotas);
     free(VetorMes);
     fclose(arquivo1);
-
+    fclose(ponteiro);
     return 0;
 }
