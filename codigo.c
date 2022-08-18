@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+//parte que ordena o código de acordo com o modo de insertionSort
 void insercao(int n, int * VetorNotas, int *VetorMes)
 {
 	for (int j = 1; j < n; ++j) {
@@ -23,7 +23,7 @@ int main(){
     int d, mes, ano, Notas;
     int *VetorNotas, *VetorMes;
     int i = 0;
-    
+    /*Leitura do arquivo revisão.txt, onde está todas as colunas válidas */
     while (1)
     {
         if(fscanf(arquivo1, "%d-%d-%d-%d", &ano, &mes, &d, &Notas) == EOF){break;}
@@ -52,6 +52,8 @@ int main(){
     inicio = clock();
     FILE *ponteiro = fopen("medias.csv","w+");
     fprintf(ponteiro,"Mes,Avaliação_Média\n");
+    int vetormediames[7] = {1,2,3,4,5,6,7};
+    float media[7];
     for (int j = 1; j <= 7; j++)
     {
         soma = 0;
@@ -68,9 +70,15 @@ int main(){
                 break;
             }
         }
-        fprintf(ponteiro,"2022_0%d,%.2lf\n", j, soma / contador);
-
+        media[j -1] = soma / contador;
     }
+    insercao(7, &media, &vetormediames);
+
+    for (int k = 6; k >= 0; k--)
+    {
+        fprintf(ponteiro,"2022_0%d;%.2lf\n", vetormediames[k], media[k]);
+    }
+    
     fim = clock();
     tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
     printf("média - %lf segundos\n", tempo);
