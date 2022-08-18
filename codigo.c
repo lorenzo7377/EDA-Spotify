@@ -73,14 +73,14 @@ int main(){
         media[j -1] = soma / contador;
     }
     insercao(7, &media, &vetormediames);
-
+    fim = clock();
+    tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
     for (int k = 6; k >= 0; k--)
     {
         fprintf(ponteiro,"2022_0%d;%.2lf\n", vetormediames[k], media[k]);
     }
     
-    fim = clock();
-    tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
+    
     printf("média - %lf segundos\n", tempo);
     printf("ordenação - %lf segundos\n", tempo2);
     free(VetorNotas);
