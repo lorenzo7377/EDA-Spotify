@@ -7,4 +7,7 @@ os meses de Janeiro a Julho do ano de 2022. As avaliações referem-se a uma not
 
 ## Variáveis de Interesse
 Data do Registro: Time_submited
-Rating: 
+Nota da Avaliação: Rating 
+
+## Objetivo
+Quais os meses em que o aplicativo Spotify foi mais bem avaliado?
