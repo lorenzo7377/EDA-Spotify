@@ -72,7 +72,7 @@ int main(){
         }
         media[j -1] = soma / contador;
     }
-    insercao(7, &media, &vetormediames);
+    insercao(7, media, vetormediames);
     fim = clock();
     tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
     for (int k = 6; k >= 0; k--)
